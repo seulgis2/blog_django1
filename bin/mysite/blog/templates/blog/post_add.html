@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <h2 class="post-add">Add new Post</h2>
+    <div class="container">
+        <div class="form-group">
+            <label for="input-title">Title: </label>
+            <input name="title" id="input-title" type="text" class="form-control" value="{{ title }}" placeholder="글 제목">
+        </div>
+        <div class="form-group">
+            <label for="input-content">Text: </label>
+            <textarea name="content" id="input-content" class="form-control" rows="5" placeholder="글 내용">{{ content }}</textarea>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="publish" value="True">Post</input>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+</form>
+{% endblock %}
